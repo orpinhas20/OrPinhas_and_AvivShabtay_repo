@@ -1,6 +1,7 @@
 #ifndef __BOOKING_H
 #define __BOOKING_H
 #include <iostream>
+#include "Guest.h"
 using namespace std;
 
 class Booking
@@ -20,13 +21,13 @@ public:
 		this->numberOfGuests = numberOfGuests;
 	};
 
-	~Booking();
+	~Booking()=default;
 
 
 	friend void operator+=(Booking& booking, Guest& guest)
 	{
-		booking.stayingList[numberOfGuests] = guest;
-		numberOfGuests++;
+		booking.stayingList[this->numberOfGuests] = guest;
+		this->numberOfGuests++;
 
 	};
 
