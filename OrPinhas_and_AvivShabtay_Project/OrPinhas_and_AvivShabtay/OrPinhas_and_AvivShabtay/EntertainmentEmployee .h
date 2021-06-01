@@ -10,21 +10,29 @@ private:
 	char* speciality;
 
 public:
-	EntertainmentEmployee(char* strName)
+	EntertainmentEmployee(char* name)
 	{
-		speciality = new char[strlen(strName) + 1];
-		strcpy(speciality, strName);
+		this->speciality = new char[strlen(name) + 1];
+		strcpy(this->speciality, name);
 	};
 
 	EntertainmentEmployee(EntertainmentEmployee& entertainmentEmployee)
 	{
-		speciality = new char[strlen(entertainmentEmployee.speciality) + 1];
-		strcpy(speciality, entertainmentEmployee.speciality);
+		this->speciality = new char[strlen(entertainmentEmployee.speciality) + 1];
+		strcpy(this->speciality, entertainmentEmployee.speciality);
 	};
 
 	~EntertainmentEmployee()
 	{
-		delete[] speciality;
+		try
+		{
+			delete[] speciality;
+		}
+		catch()
+		{
+			 cout << "Exception\n";
+		}
+	
 	};
 
 };
