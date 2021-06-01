@@ -10,23 +10,30 @@ protected:
 	char* name;
 
 public:
-	Person(int age, char* strName)
+	Person(int age, char* name)
 	{
-		this->age = age
-			name = new char[strlen(strName) + 1];
-		strcpy(name, strName);
+		this->age = age;
+		name = new char[strlen(name) + 1];
+		strcpy(name, name);
 	};
 
 	Person(Person& person)
 	{
-		age = person.age
-			name = new char[strlen(person.name) + 1];
-		strcpy(name, person.name);
+		this.age = person.age;
+		this.name = new char[strlen(person.name) + 1];
+		strcpy(this.name, person.name);
 	};
 
 	~Person()
 	{
-		delete[] name;
+		try
+		{
+			delete[] name;
+		}
+		catch()
+		{	
+			 cout << "Exception\n";
+		}
 	};
 
 	char* getName()
