@@ -7,16 +7,16 @@ class Employee : public Person
 {
 protected:
 	int jobScope;
-	int isWorkimgSaterday;
+	bool isWorkimgSaterday;
 
 public:
-	Employee(int jobScope, int isWorkimgSaterday)
+	Employee(int jobScope, bool isWorkimgSaterday)
 	{
 		this->jobScope = jobScope;
 		this->isWorkimgSaterday = isWorkimgSaterday;
 	};
 
-	~Employee();
+	~Employee()=default;
 
 
 
