@@ -14,8 +14,8 @@ public:
 	{
 		roomType = new char[strlen(strRoomType) + 1];
 		strcpy(roomType, strRoomType);
-		this-> maxNumberOfGuests = maxNumberOfGuests;
-		this-> costPerNight = costPerNight;
+		this->maxNumberOfGuests = maxNumberOfGuests;
+		this->costPerNight = costPerNight;
 	};
 
 	Room(Room& room)

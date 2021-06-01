@@ -12,15 +12,15 @@ protected:
 public:
 	Person(int age, char* strName)
 	{
-		this-> age = age
-		name = new char[strlen(strName) + 1];
+		this->age = age
+			name = new char[strlen(strName) + 1];
 		strcpy(name, strName);
 	};
 
 	Person(Person& person)
 	{
 		age = person.age
-		name = new char[strlen(person.name) + 1];
+			name = new char[strlen(person.name) + 1];
 		strcpy(name, person.name);
 	};
 
@@ -29,7 +29,7 @@ public:
 		delete[] name;
 	};
 
-	char* getName() 
+	char* getName()
 	{
 		return name;
 	};

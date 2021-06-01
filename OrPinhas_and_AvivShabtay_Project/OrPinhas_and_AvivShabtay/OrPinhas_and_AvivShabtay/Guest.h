@@ -7,11 +7,11 @@ class Guest : public Person
 {
 protected:
 	int roomNumber;
-	
+
 public:
 	Guest(int roomNumber)
 	{
-		this-> roomNumber = roomNumber;
+		this->roomNumber = roomNumber;
 	};
 	~Guest();
 

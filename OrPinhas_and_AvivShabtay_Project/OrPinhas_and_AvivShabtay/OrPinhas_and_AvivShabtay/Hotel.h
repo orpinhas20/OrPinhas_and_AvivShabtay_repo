@@ -18,8 +18,8 @@ public:
 	{
 		hotelName = new char[strlen(strName) + 1];
 		strcpy(hotelName, strName);
-		this-> roomAmount = roomAmount;
-		this-> pool = pool;
+		this->roomAmount = roomAmount;
+		this->pool = pool;
 	};
 
 	Hotel(Hotel& hotel)
@@ -35,11 +35,11 @@ public:
 		delete[] hotelName;
 	};
 
-//	friend ostream& operator<<(ostream& os, Hotel& hotel) const
-//	{
-//		os << 'List Of Crew For Current Shift:' << employee.crewList;
-//		return os;
-//	};
+	//	friend ostream& operator<<(ostream& os, Hotel& hotel) const
+	//	{
+	//		os << 'List Of Crew For Current Shift:' << employee.crewList;
+	//		return os;
+	//	};
 
 
 };

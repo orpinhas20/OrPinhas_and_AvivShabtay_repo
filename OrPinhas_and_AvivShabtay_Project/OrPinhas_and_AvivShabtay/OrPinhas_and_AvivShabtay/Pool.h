@@ -10,21 +10,21 @@ private:
 	char* openingHours;
 
 public:
-	Pool(int isHavingEntertainment, char* strHours) 
+	Pool(int isHavingEntertainment, char* strHours)
 	{
-	openingHours = new char[strlen(strHours) + 1];
-	strcpy(openingHours, strHours);
-	this->isHavingEntertainment = isHavingEntertainment;
+		openingHours = new char[strlen(strHours) + 1];
+		strcpy(openingHours, strHours);
+		this->isHavingEntertainment = isHavingEntertainment;
 	};
 
-	Pool( Pool& pool)
+	Pool(Pool& pool)
 	{
 		openingHours = new char[strlen(pool.openingHours) + 1];
 		strcpy(openingHours, pool.openingHours);
 		isHavingEntertainment = pool.isHavingEntertainment;
 	};
 
-	~Pool() 
+	~Pool()
 	{
 		delete[] openingHours;
 	};

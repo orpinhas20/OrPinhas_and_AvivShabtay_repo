@@ -10,15 +10,15 @@ protected:
 	int isWorkimgSaterday;
 
 public:
-	Employee( int jobScope, int isWorkimgSaterday)
+	Employee(int jobScope, int isWorkimgSaterday)
 	{
-		this-> jobScope = jobScope;
-		this-> isWorkimgSaterday = isWorkimgSaterday;
+		this->jobScope = jobScope;
+		this->isWorkimgSaterday = isWorkimgSaterday;
 	};
 
 	~Employee();
 
-	
+
 
 	friend bool operator==(const Employee& employee1, const Employee& employee2) const
 	{

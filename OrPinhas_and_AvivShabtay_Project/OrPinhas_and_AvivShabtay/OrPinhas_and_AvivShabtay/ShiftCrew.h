@@ -12,16 +12,16 @@ private:
 public:
 	ShiftCrew(Employee crewList[], int crewAmount)
 	{
-		this-> crewList = crewList;
-		this-> crewAmount = crewAmount;
+		this->crewList = crewList;
+		this->crewAmount = crewAmount;
 	};
 
 	~ShiftCrew();
 
-	friend void operator+=(int size,ShiftCrew& shiftCrew, Employee& employee) 
+	friend void operator+=(int size, ShiftCrew& shiftCrew, Employee& employee)
 	{
 		shiftcrew[size] = employee;
-		
+
 	};
 
 

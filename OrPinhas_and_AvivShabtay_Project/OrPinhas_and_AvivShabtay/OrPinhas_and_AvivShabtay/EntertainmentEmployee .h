@@ -1,3 +1,4 @@
+
 #ifndef __ENTERTAINMENTEMPLOYEE_H
 #define __ENTERTAINMENTEMPLOYEE_H
 #include <string.h>
@@ -21,7 +22,7 @@ public:
 		strcpy(speciality, entertainmentEmployee.speciality);
 	};
 
-	~EntertainmentEmployee() 
+	~EntertainmentEmployee()
 	{
 		delete[] speciality;
 	};
