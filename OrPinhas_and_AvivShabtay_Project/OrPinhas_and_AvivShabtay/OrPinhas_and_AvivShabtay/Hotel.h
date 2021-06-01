@@ -14,20 +14,20 @@ private:
 	Hotel(Hotel& hotle);
 
 public:
-	Hotel(int roomAmount, char* strName, Pool pool)
+	Hotel(int roomAmount, char* name, Pool pool)
 	{
-		hotelName = new char[strlen(strName) + 1];
-		strcpy(hotelName, strName);
+		hotelName = new char[strlen(name) + 1];
+		strcpy(hotelName, name);
 		this->roomAmount = roomAmount;
 		this->pool = pool;
 	};
 
 	Hotel(Hotel& hotel)
 	{
-		hotelName = new char[strlen(hotel.votelName) + 1];
+		this.hotelName = new char[strlen(hotel.votelName) + 1];
 		strcpy(hotelName, hotel.hotelName);
-		roomAmount = hotel.roomAmount;
-		pool = hotel.pool;
+		this.roomAmount = hotel.roomAmount;
+		this.pool = hotel.pool;
 	};
 
 	~Hotel()
