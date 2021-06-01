@@ -16,8 +16,8 @@ private:
 public:
 	Hotel(int roomAmount, char* name, Pool pool)
 	{
-		hotelName = new char[strlen(name) + 1];
-		strcpy(hotelName, name);
+		this->hotelName = new char[strlen(name) + 1];
+		strcpy(this->hotelName, name);
 		this->roomAmount = roomAmount;
 		this->pool = pool;
 	};
@@ -25,7 +25,7 @@ public:
 	Hotel(Hotel& hotel)
 	{
 		this.hotelName = new char[strlen(hotel.votelName) + 1];
-		strcpy(hotelName, hotel.hotelName);
+		strcpy(this->hotelName, hotel.hotelName);
 		this.roomAmount = hotel.roomAmount;
 		this.pool = hotel.pool;
 	};
