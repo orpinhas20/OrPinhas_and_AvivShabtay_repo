@@ -9,31 +9,34 @@ private:
 	int maxNumberOfGuests;
 	char* roomType;
 	int costPerNight;
+	
 public:
 	Room(int maxNumberOfGuests, char* strRoomType, int costPerNight)
 	{
-		roomType = new char[strlen(strRoomType) + 1];
-		strcpy(roomType, strRoomType);
+		this->roomType = new char[strlen(strRoomType) + 1];
+		strcpy(this->roomType, strRoomType);
 		this->maxNumberOfGuests = maxNumberOfGuests;
 		this->costPerNight = costPerNight;
 	};
 
 	Room(Room& room)
 	{
-		roomType = new char[strlen(room.roomType) + 1];
-		strcpy(roomType, room.roomType);
-		maxNumberOfGuests = room.maxNumberOfGuests;
-		costPerNight = room.costPerNight;
+		this->roomType = new char[strlen(room.roomType) + 1];
+		strcpy(this->roomType, room.roomType);
+		this->maxNumberOfGuests = room.maxNumberOfGuests;
+		this->costPerNight = room.costPerNight;
 	};
 
 	~Room()
 	{
-		delete[] = roomType;
+		try
+		{
+			delete[] = roomType;
+		}
+		catch()
+		{
+			 cout << "Exception\n";
+		}
 	};
-
 };
 #endif
-
-
-
-
