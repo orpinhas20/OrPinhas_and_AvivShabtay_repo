@@ -13,8 +13,8 @@ public:
 	Person(int age, char* name)
 	{
 		this->age = age;
-		name = new char[strlen(name) + 1];
-		strcpy(name, name);
+		this.name = new char[strlen(name) + 1];
+		strcpy(this.name, name);
 	};
 
 	Person(Person& person)
