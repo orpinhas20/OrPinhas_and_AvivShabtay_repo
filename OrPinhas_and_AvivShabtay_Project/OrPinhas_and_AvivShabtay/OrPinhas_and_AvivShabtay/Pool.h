@@ -6,27 +6,35 @@ using namespace std;
 class Pool
 {
 private:
-	int isHavingEntertainment;
+	bool isHavingEntertainment;
 	char* openingHours;
 
 public:
-	Pool(int isHavingEntertainment, char* strHours)
+	Pool(bool isHavingEntertainment, char* hours)
 	{
-		openingHours = new char[strlen(strHours) + 1];
-		strcpy(openingHours, strHours);
+		this->openingHours = new char[strlen(strHours) + 1];
+		strcpy(this.openingHours, hours);
 		this->isHavingEntertainment = isHavingEntertainment;
 	};
 
 	Pool(Pool& pool)
 	{
-		openingHours = new char[strlen(pool.openingHours) + 1];
-		strcpy(openingHours, pool.openingHours);
-		isHavingEntertainment = pool.isHavingEntertainment;
+		this->openingHours = new char[strlen(pool.openingHours) + 1];
+		strcpy(this->openingHours, pool.openingHours);
+		this->isHavingEntertainment = pool.isHavingEntertainment;
 	};
 
 	~Pool()
 	{
-		delete[] openingHours;
+		try
+		{
+			delete[] openingHours;
+		}
+		catch()
+		{
+			 cout << "Exception\n";
+		}
+		
 	};
 
 
