@@ -2,6 +2,7 @@
 #define __HOTEL_H
 #include <iostream>
 #include <string.h>
+#include "Pool.h"
 using namespace std;
 
 class Hotel
@@ -10,7 +11,6 @@ private:
 	int roomAmount;
 	char* hotelName;
 	Pool pool;
-	//we d'ont want to creat hotle copies, only one hotel
 	Hotel(Hotel& hotle);
 
 public:
@@ -32,7 +32,14 @@ public:
 
 	~Hotel()
 	{
-		delete[] hotelName;
+		try
+		{
+			delete[] hotelName;
+		}
+		catch()
+		{
+			cout << "Exception\n";
+		};
 	};
 
 	//	friend ostream& operator<<(ostream& os, Hotel& hotel) const
