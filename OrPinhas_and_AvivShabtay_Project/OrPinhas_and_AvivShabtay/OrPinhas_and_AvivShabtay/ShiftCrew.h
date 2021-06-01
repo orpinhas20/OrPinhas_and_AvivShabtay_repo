@@ -1,6 +1,7 @@
 #ifndef __SHIFTCREW_H
 #define __SHIFTCREW_H
 #include <iostream>
+#include "Employee.h"
 using namespace std;
 
 class ShiftCrew
@@ -16,28 +17,25 @@ public:
 		this->crewAmount = crewAmount;
 	};
 
-	~ShiftCrew();
+	~ShiftCrew() = default;
 
 	friend void operator+=(int size, ShiftCrew& shiftCrew, Employee& employee)
 	{
-		shiftcrew[size] = employee;
-
+		this->shiftcrew[size] = employee;
 	};
-
 
 	friend void operator-=(int size, ShiftCrew& shiftCrew, Employee& employee)
 	{
 		for (int i = 0; i < size; i++) {
-			if (shiftCrew[i] == employee)
+			if (this->shiftCrew[i] == employee)
 			{
 				for (int j = i; j < size; j++) {
-					shiftCrew[j] = shiftCrew[j + 1];
+					this->shiftCrew[j] = this->shiftCrew[j + 1];
 				}
-				shiftCrew[size - 1] = null
+				this->shiftCrew[size - 1] = null;
 					return;
 			}
 		}
-
 	};
 
 	friend ostream& operator<<(ostream& os, ShiftCrew& shiftCrew) const
