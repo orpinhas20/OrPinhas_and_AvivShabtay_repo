@@ -13,7 +13,8 @@ public:
 	{
 		this->roomNumber = roomNumber;
 	};
-	~Guest();
+	
+	~Guest()=default;
 
 };
 #endif
