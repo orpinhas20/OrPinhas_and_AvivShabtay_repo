@@ -1,24 +1,27 @@
 #ifndef __EMPLOYEE_H
 #define __EMPLOYEE_H
+
+#include "Person.h"
 #include <iostream>
+
 using namespace std;
 
 class Employee : public Person
 {
 protected:
 	int jobScope;
-	int isWorkimgSaterday;
+	bool isWorkimgSaterday;
 
 public:
-	Employee( int jobScope, int isWorkimgSaterday)
+	Employee(int jobScope, bool isWorkimgSaterday)
 	{
-		this-> jobScope = jobScope;
-		this-> isWorkimgSaterday = isWorkimgSaterday;
+		this->jobScope = jobScope;
+		this->isWorkimgSaterday = isWorkimgSaterday;
 	};
 
-	~Employee();
+	~Employee()=default;
 
-	
+
 
 	friend bool operator==(const Employee& employee1, const Employee& employee2) const
 	{
