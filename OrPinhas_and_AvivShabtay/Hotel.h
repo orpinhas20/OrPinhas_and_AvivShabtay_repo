@@ -44,12 +44,6 @@ public:
 		};
 	};
 
-	//	friend ostream& operator<<(ostream& os, Hotel& hotel) const
-	//	{
-	//		os << 'List Of Crew For Current Shift:' << employee.crewList;
-	//		return os;
-	//	};
-
 
 };
 #endif

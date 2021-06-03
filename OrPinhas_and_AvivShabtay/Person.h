@@ -40,7 +40,6 @@ public:
 
 	char* getName()
 	{
-		return name;
 	};
 
 };

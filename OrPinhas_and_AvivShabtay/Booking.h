@@ -28,15 +28,12 @@ public:
 
 	friend void operator+=(Booking& booking, Guest& guest)
 	{
-		booking.stayingList[this->numberOfGuests] = guest;
-		this->numberOfGuests++;
 
 	};
 
 	friend ostream& operator<<(ostream& os, Booking& booking) const
 	{
-		os << 'Order: number of guests - ' << booking.numberOfGuests << 'Name Of Guests - ' << booking.stayingList << 'Order Length - ' << booking.orderLength << 'Room Number For Current Order - ' << booking.roomNumber;
-		return os;
+
 	};
 
 
