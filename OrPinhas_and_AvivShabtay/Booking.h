@@ -1,7 +1,9 @@
 #ifndef __BOOKING_H
 #define __BOOKING_H
+
 #include <iostream>
 #include "Guest.h"
+
 using namespace std;
 
 class Booking

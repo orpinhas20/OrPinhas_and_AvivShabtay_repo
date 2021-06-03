@@ -1,9 +1,10 @@
-
 #ifndef __KITCHENEMPLOYEE_H
 #define __KITCHENEMPLOYEE_H
+
+#include "Employee.h"
 #include <iostream>
 #include <string.h>
-#include "Employee.h"
+
 using namespace std;
 
 class KitchenEmployee : public Employee

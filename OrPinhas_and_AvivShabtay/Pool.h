@@ -1,6 +1,8 @@
 #ifndef __POOL_H
 #define __POOL_H
+
 #include <iostream>
+
 using namespace std;
 
 class Pool

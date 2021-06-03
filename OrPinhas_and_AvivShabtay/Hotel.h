@@ -1,8 +1,10 @@
 #ifndef __HOTEL_H
 #define __HOTEL_H
+
 #include <iostream>
 #include <string.h>
 #include "Pool.h"
+
 using namespace std;
 
 class Hotel

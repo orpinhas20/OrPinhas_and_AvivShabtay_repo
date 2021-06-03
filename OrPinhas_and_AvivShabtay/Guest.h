@@ -1,6 +1,9 @@
 #ifndef __GUEST_H
 #define __GUEST_H
+
+#include "Person.h"
 #include <iostream>
+
 using namespace std;
 
 class Guest : public Person

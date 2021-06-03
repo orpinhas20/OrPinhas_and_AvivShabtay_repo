@@ -1,7 +1,10 @@
-
 #ifndef __ENTERTAINMENTEMPLOYEE_H
 #define __ENTERTAINMENTEMPLOYEE_H
+
+#include "Employee.h"
+#include "Guest.h"
 #include <string.h>
+
 using namespace std;
 
 class EntertainmentEmployee : public Employee, Guest

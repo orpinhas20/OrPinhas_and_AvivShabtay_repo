@@ -1,6 +1,9 @@
 #ifndef __EMPLOYEE_H
 #define __EMPLOYEE_H
+
+#include "Person.h"
 #include <iostream>
+
 using namespace std;
 
 class Employee : public Person

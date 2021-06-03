@@ -1,7 +1,9 @@
 #ifndef __SHIFTCREW_H
 #define __SHIFTCREW_H
-#include <iostream>
+
 #include "Employee.h"
+#include <iostream>
+
 using namespace std;
 
 class ShiftCrew
