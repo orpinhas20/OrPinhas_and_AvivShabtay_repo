@@ -12,35 +12,11 @@ private:
 	char* openingHours;
 
 public:
-	Pool(bool isHavingEntertainment, char* hours)
-	{
-		this->openingHours = new char[strlen(strHours) + 1];
-		strcpy(this.openingHours, hours);
-		this->isHavingEntertainment = isHavingEntertainment;
-	};
+	Pool(bool isHavingEntertainment, char* hours);
 
-	Pool(Pool& pool)
-	{
-		this->openingHours = new char[strlen(pool.openingHours) + 1];
-		strcpy(this->openingHours, pool.openingHours);
-		this->isHavingEntertainment = pool.isHavingEntertainment;
-	};
+	Pool(Pool& pool);
 
-	~Pool()
-	{
-		try
-		{
-			delete[] openingHours;
-		}
-		catch()
-		{
-			 cout << "Exception\n";
-		}
-		
-	};
-
-
-
+	~Pool();
 };
 #endif
 
