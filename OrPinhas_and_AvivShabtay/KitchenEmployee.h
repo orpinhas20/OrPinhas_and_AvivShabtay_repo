@@ -2,41 +2,37 @@
 #define __KITCHENEMPLOYEE_H
 
 #include "Employee.h"
+
 #include <iostream>
-#include <string.h>
 
 using namespace std;
 
-class KitchenEmployee : public Employee
+class KitchenEmployee final : public Employee
 {
-protected:
-	char* speciality;
+private:
+	const char* specialty;
 
 public:
-	KitchenEmployee(char* name)
-	{
-		speciality = new char[strlen(name) + 1];
-		strcpy(speciality, name);
-	};
+	/*
+	 * Not doing anything, just create empty prototype of KitchenEmployee.
+	 */
+	KitchenEmployee() = default;
 
-	KitchenEmployee(KitchenEmployee& kitchenEmployee)
-	{
-		this.speciality = new char[strlen(kitchenEmployee.speciality) + 1];
-		strcpy(speciality, kitchenEmployee.speciality);
-	};
+	/*
+	 * Create new kitchen employee with specialty.
+	 * specialty - the kitchen employee specialty description.
+	 */
+	explicit KitchenEmployee(int age, const char* name, int jobScope, bool isWorkingSaturday, const char* specialty);
 
-	~KitchenEmployee()
-	{
-		try
-		{
-			delete[] speciality;
-		}
-		catch()
-		{
-			 cout << "Exception\n";
-		 }
-	};
+	/*
+	 * Return the kitchen specialty of this employee.
+	 */
+	const char* getSpecialty() const;
 
+	/*
+	 * Set the kitchen specialty of this employee.
+	 */
+	void setSpecialty(const char* specialty);
 };
 #endif
 

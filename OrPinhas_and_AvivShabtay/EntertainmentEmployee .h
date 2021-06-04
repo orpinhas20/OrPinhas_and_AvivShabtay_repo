@@ -3,40 +3,34 @@
 
 #include "Employee.h"
 #include "Guest.h"
-#include <string.h>
 
 using namespace std;
 
-class EntertainmentEmployee : public Employee, Guest
+class EntertainmentEmployee final : public Employee, public Guest
 {
 private:
-	char* speciality;
+	const char* capability;
 
 public:
-	EntertainmentEmployee(char* name)
-	{
-		this->speciality = new char[strlen(name) + 1];
-		strcpy(this->speciality, name);
-	};
+	/*
+	 * Not doing anything, just create empty prototype of EntertainmentEmployee.
+	 */
+	EntertainmentEmployee() = default;
 
-	EntertainmentEmployee(EntertainmentEmployee& entertainmentEmployee)
-	{
-		this->speciality = new char[strlen(entertainmentEmployee.speciality) + 1];
-		strcpy(this->speciality, entertainmentEmployee.speciality);
-	};
+	/*
+	 * Create new entertainment employee with specific capability.
+	 */
+	explicit EntertainmentEmployee(int age, const char* name, int jobScope, bool isWorkingSaturday, int roomNumber,
+		const char* capability);
 
-	~EntertainmentEmployee()
-	{
-		try
-		{
-			delete[] speciality;
-		}
-		catch()
-		{
-			 cout << "Exception\n";
-		}
-	
-	};
+	/*
+	 * Return the entertainment capability of this employee.
+	 */
+	const char* getCapability() const;
 
+	/*
+	 * Set the entertainment capability for this employee.
+	 */
+	void setCapability(const char* capability);
 };
 #endif

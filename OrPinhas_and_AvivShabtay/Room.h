@@ -1,5 +1,5 @@
-#ifndef __PERSON_H
-#define __PERSON_H
+#ifndef __ROOM_H
+#define __ROOM_H
 
 #include <iostream>
 
@@ -9,36 +9,43 @@ class Room
 {
 private:
 	int maxNumberOfGuests;
-	char* roomType;
+	const char* roomType;
 	int costPerNight;
-	
+
 public:
-	Room(int maxNumberOfGuests, char* strRoomType, int costPerNight)
-	{
-		this->roomType = new char[strlen(strRoomType) + 1];
-		strcpy(this->roomType, strRoomType);
-		this->maxNumberOfGuests = maxNumberOfGuests;
-		this->costPerNight = costPerNight;
-	};
+	/*
+	 * Define new room in the hotel.
+	 */
+	explicit Room(int maxNumberOfGuests, const char* roomType, int costPerNight);
 
-	Room(Room& room)
-	{
-		this->roomType = new char[strlen(room.roomType) + 1];
-		strcpy(this->roomType, room.roomType);
-		this->maxNumberOfGuests = room.maxNumberOfGuests;
-		this->costPerNight = room.costPerNight;
-	};
+	/*
+	 * Return the maximum number of guests in the room.
+	 */
+	int getMaxGuestsInRoom() const;
 
-	~Room()
-	{
-		try
-		{
-			delete[] = roomType;
-		}
-		catch()
-		{
-			 cout << "Exception\n";
-		}
-	};
+	/*
+	 * Set the maximum number of guests in the room.
+	 */
+	void setMaxGuestsInRoom(int maxGuests);
+
+	/*
+	 * Return the ype of the room.
+	 */
+	int getRoomType() const;
+
+	/*
+	 * Set the types of the room.
+	 */
+	void setRoomType(const char* roomType);
+
+	/*
+	 * Return the cost of the room for 1 night.
+	 */
+	int getCostPerNight() const;
+
+	/*
+	 * Set the cost of the room for 1 night.
+	 */
+	void setCostPerNight(int costPerNight);
 };
 #endif

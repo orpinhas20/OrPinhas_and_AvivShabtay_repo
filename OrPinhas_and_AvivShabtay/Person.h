@@ -9,39 +9,51 @@ class Person
 {
 protected:
 	int age;
-	char* name;
+	const char* name;
 
 public:
-	Person(int age, char* name)
-	{
-		this->age = age;
-		this.name = new char[strlen(name) + 1];
-		strcpy(this.name, name);
-	};
+	/*
+	 * Not doing anything, just create empty prototype of person.
+	 */
+	Person() = default;
 
-	Person(Person& person)
-	{
-		this.age = person.age;
-		this.name = new char[strlen(person.name) + 1];
-		strcpy(this.name, person.name);
-	};
+	/*
+	 * Create new person.
+	 * age - the age of the person.
+	 * name - the name of the person.
+	 */
+	explicit Person(int age, const char* name);
 
-	~Person()
-	{
-		try
-		{
-			delete[] name;
-		}
-		catch()
-		{	
-			 cout << "Exception\n";
-		}
-	};
+	/*
+	 * Create person from given person.
+	 * Allow conversion.
+	 */
+	Person(Person& person);
 
-	char* getName()
-	{
-	};
+	/*
+	 * Not doing anything, just note virtual in case needed to be implemented.
+	 */
+	virtual ~Person() = default;
 
+	/*
+	 * Return the person age.
+	 */
+	int getAge() const;
+
+	/*
+	 * Return the person name.
+	 */
+	const char* getName() const;
+
+	/*
+	 * Verify if other person equal in his attributes to this person.
+	 */
+	bool operator==(const Person& other) const;
+
+	/*
+	 * Print the person details.
+	 */
+	friend ostream& operator<<(ostream& os, const Person& person);
 };
 #endif
 
