@@ -1,41 +1,47 @@
 #ifndef __BOOKING_H
 #define __BOOKING_H
 
-#include <iostream>
 #include "Guest.h"
+#include <iostream>
 
 using namespace std;
 
-class Booking
+class Booking final
 {
 private:
 	int orderLength;
 	int roomNumber;
 	int numberOfGuests;
-	Guest stayingList[];
+	Guest** guests;
 
 public:
-	Booking(int orderLength, int roomNumber, Guest stayingList[], int numberOfGuests)
-	{
-		this->orderLength = orderLength;
-		this->roomNumber = roomNumber;
-		this->stayingList = stayingList;
-		this->numberOfGuests = numberOfGuests;
-	};
+	/*
+	 * Not doing anything, just create empty prototype of booking.
+	 */
+	Booking() = default;
 
-	~Booking()=default;
+	/*
+	 * Reserve room in the hotel.
+	 * orderLength - amount of the days for the booking
+	 * roomNumber - the room number
+	 * guests - array of the guest for the room
+	 * numberOfGuests - number of guest in stayingList
+	 */
+	explicit Booking(int orderLength, int roomNumber, Guest** guests, int numberOfGuests);
 
+	/*
+	 * Release all the allocated memory of the guests
+	 */
+	~Booking();
 
-	friend void operator+=(Booking& booking, Guest& guest)
-	{
+	/*
+	 * Add new guest to the booking.
+	 */
+	void operator+=(Guest* guest);
 
-	};
-
-	friend ostream& operator<<(ostream& os, Booking& booking) const
-	{
-
-	};
-
-
+	/*
+	 * Print the booking information, guests information.
+	 */
+	friend ostream& operator<<(ostream& os, const Booking& booking);
 };
 #endif
