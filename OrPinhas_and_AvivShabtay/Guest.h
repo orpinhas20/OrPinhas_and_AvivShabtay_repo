@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class Guest : public Person
+class Guest : virtual public Person
 {
 protected:
 	int roomNumber;
