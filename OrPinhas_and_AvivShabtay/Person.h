@@ -46,6 +46,11 @@ public:
 	const char* getName() const;
 
 	/*
+	 * Verify if other person equal in his attributes to this person.
+	 */
+	bool operator==(const Person& other) const;
+
+	/*
 	 * Print the person details.
 	 */
 	friend ostream& operator<<(ostream& os, const Person& person);

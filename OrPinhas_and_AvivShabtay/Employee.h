@@ -10,22 +10,39 @@ class Employee : public Person
 {
 protected:
 	int jobScope;
-	bool isWorkimgSaterday;
+	bool isWorkingSaturday;
 
 public:
-	Employee(int jobScope, bool isWorkimgSaterday)
-	{
-		this->jobScope = jobScope;
-		this->isWorkimgSaterday = isWorkimgSaterday;
-	};
+	/*
+	 * Not doing anything, just create empty prototype of Employee.
+	 */
+	Employee() = default;
 
-	~Employee()=default;
+	/*
+	 * Create new employee.
+	 * jobScope - how much hours the employee can work
+	 * isWorkingSaturday - is willing to work on Saturday
+	 */
+	explicit Employee(int age, const char* name, int jobScope, bool isWorkingSaturday);
 
+	/*
+	 * Not doing anything, just note virtual in case needed to be implemented.
+	 */
+	virtual ~Employee() = default;
 
+	/*
+	 * Return the job scope of this employee.
+	 */
+	int getJobScope() const;
 
-	friend bool operator==(const Employee& employee1, const Employee& employee2) const
-	{
-	};
+	/*
+	 * Return if this employee works on Saturday.
+	 */
+	bool isWorkingOnSaturday() const;
 
+	/*
+	 * Verify if other employee equal in his attributes to this employee.
+	 */
+	bool operator==(const Employee& other) const;
 };
 #endif
