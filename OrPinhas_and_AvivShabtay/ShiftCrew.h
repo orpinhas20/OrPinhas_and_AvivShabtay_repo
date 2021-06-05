@@ -6,35 +6,50 @@
 
 using namespace std;
 
-class ShiftCrew
+class ShiftCrew final
 {
 private:
-	Employee crewList[];
+	Employee** crewList;
 	int crewAmount;
 
 public:
-	ShiftCrew(Employee crewList[], int crewAmount)
-	{
-		this->crewList = crewList;
-		this->crewAmount = crewAmount;
-	};
+	/*
+	 * Not doing anything, just create empty prototype of ShiftCrew.
+	 */
+	ShiftCrew() = defualt;
+	/*
+	 * Create crew for current shift.
+	 * crewAmount - amount of needed crew member for that shift
+	 */
+	explicit ShiftCrew(Employee** crewList, int crewAmount);
 
-	~ShiftCrew() = default;
+	/*
+	 * Release all the allocated memory of the Shift Crew
+	 */
+	~ShiftCrew();
 
-	friend void operator+=(int size, ShiftCrew& shiftCrew, Employee& employee)
-	{
-		
-	};
+	/*
+	 * Add new employee to the shift.
+	 */
+	void operator+=(int size, ShiftCrew& shiftCrew, Employee& employee);
 
-	friend void operator-=(int size, ShiftCrew& shiftCrew, Employee& employee)
-	{
+	/*
+	 * Remove one employee from the shift.
+	 */
+	void operator-=(int size, ShiftCrew& shiftCrew, Employee& employee);
 
-	};
-
-	friend ostream& operator<<(ostream& os, ShiftCrew& shiftCrew) const
-	{
-
-	};
+	/*
+	 * Print the shift crew details.
+	 */
+	friend ostream& operator<<(ostream& os, const ShiftCrew& shiftCrew) const;
+	/*
+	 * Return the Employees for current shift.
+	 */
+	Employee** getCrewList();
+	/*
+	 * Return the amount of needed employees for current shift.
+	 */
+	int getCrewAmount();
 
 };
 #endif

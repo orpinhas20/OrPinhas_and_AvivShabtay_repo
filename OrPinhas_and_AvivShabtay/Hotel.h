@@ -13,7 +13,7 @@ private:
 	int roomAmount;
 	char* hotelName;
 	Pool pool;
-	Hotel(Hotel& hotle);
+	Hotel(Hotel& hotel);
 
 public:
 	Hotel(int roomAmount, char* name, Pool pool)
@@ -32,18 +32,7 @@ public:
 		this.pool = hotel.pool;
 	};
 
-	~Hotel()
-	{
-		try
-		{
-			delete[] hotelName;
-		}
-		catch()
-		{
-			cout << "Exception\n";
-		};
-	};
-
+	~Hotel();
 
 };
 #endif

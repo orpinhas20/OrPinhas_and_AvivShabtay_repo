@@ -5,17 +5,24 @@
 
 using namespace std;
 
-class Pool
+class Pool final
 {
 private:
 	bool isHavingEntertainment;
-	char* openingHours;
+	const char* openingHours;
 
 public:
-	Pool(bool isHavingEntertainment, char* hours);
-
-	Pool(Pool& pool);
-
+	/*
+	 * Not doing anything, just create empty prototype of pool.
+	 */
+	Pool() = default;
+	/*
+	 * Define new Pool in the hotel.
+	 */
+	explicit Pool(bool isHavingEntertainment, const char* hours);
+	/*
+	 * Release all the allocated memory of the pool
+	 */
 	~Pool();
 };
 #endif
