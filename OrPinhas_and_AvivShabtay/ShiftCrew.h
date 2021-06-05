@@ -16,7 +16,8 @@ public:
 	/*
 	 * Not doing anything, just create empty prototype of ShiftCrew.
 	 */
-	ShiftCrew() = defualt;
+	ShiftCrew() = default;
+
 	/*
 	 * Create crew for current shift.
 	 * crewAmount - amount of needed crew member for that shift
@@ -31,25 +32,26 @@ public:
 	/*
 	 * Add new employee to the shift.
 	 */
-	void operator+=(int size, ShiftCrew& shiftCrew, Employee& employee);
+	void operator+=(Employee& employee);
 
 	/*
 	 * Remove one employee from the shift.
 	 */
-	void operator-=(int size, ShiftCrew& shiftCrew, Employee& employee);
+	void operator-=(Employee& employee);
+
+	/*
+	 * Return the Employees for current shift.
+	 */
+	Employee** getCrewList() const;
+
+	/*
+	 * Return the amount of needed employees for current shift.
+	 */
+	int getCrewAmount() const;
 
 	/*
 	 * Print the shift crew details.
 	 */
-	friend ostream& operator<<(ostream& os, const ShiftCrew& shiftCrew) const;
-	/*
-	 * Return the Employees for current shift.
-	 */
-	Employee** getCrewList();
-	/*
-	 * Return the amount of needed employees for current shift.
-	 */
-	int getCrewAmount();
-
+	friend ostream& operator<<(ostream& os, const ShiftCrew& shiftCrew);
 };
 #endif
