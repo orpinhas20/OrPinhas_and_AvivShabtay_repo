@@ -130,7 +130,7 @@ void showMenu(Hotel& hotel)
 	cout << "\t2 - Create new booking in the hotel" << endl;
 	cout << "\t3 - Add new employee to a shift" << endl;
 	cout << "\t4 - Search booking by guest details" << endl;
-	cout << "\t5 - Display which rooms available" << endl;
+	cout << "\t5 - Display available rooms" << endl;
 	cout << "\t6 - Add guest to an existing booking" << endl;
 	cout << "\t7 - Close existing booking" << endl;
 	cout << "\t8 - Exit the application" << endl;
