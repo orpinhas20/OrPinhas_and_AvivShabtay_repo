@@ -24,6 +24,18 @@ public:
 	Hotel(int roomAmount, const char* name, Pool pool);
 
 	/*
+	 * copy the fields to a new addres
+	 */
+	Hotel(const Hotel& other);
+
+	/*
+	 * Release all the allocated memory of the hotel.
+	 */
+	~Hotel();
+
+
+
+	/*
 	 * Display the hotel details: booking, guests, employees, etc.
 	 */
 	void printHotelDetails();

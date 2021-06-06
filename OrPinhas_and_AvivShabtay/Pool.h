@@ -23,6 +23,19 @@ public:
 	explicit Pool(bool isHavingEntertainment, const char* hours);
 
 	/*
+	 * copy the fields to a new addres
+	 */
+	Pool(const Pool& other);
+
+
+	/*
+	 * Release all the allocated memory of the Pool
+	 */
+	~Pool();
+
+
+
+	/*
 	 * Return is the pool have entertainment.
 	 */
 	bool doesHavingEntertainment() const;

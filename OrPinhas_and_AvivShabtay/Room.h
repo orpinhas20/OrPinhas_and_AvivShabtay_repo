@@ -19,6 +19,18 @@ public:
 	explicit Room(int maxNumberOfGuests, const char* roomType, int costPerNight);
 
 	/*
+	 * copy the fields to a new addres
+	 */
+	Room(const Room& other);
+
+
+	/*
+	 * Release all the allocated memory of the Room
+	 */
+	~Room();
+
+
+	/*
 	 * Return the maximum number of guests in the room.
 	 */
 	int getMaxGuestsInRoom() const;

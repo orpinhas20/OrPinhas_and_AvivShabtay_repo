@@ -33,7 +33,7 @@ public:
 	/*
 	 * Not doing anything, just note virtual in case needed to be implemented.
 	 */
-	virtual ~Person() = default;
+	virtual ~Person() ;
 
 	/*
 	 * Return the person age.
