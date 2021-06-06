@@ -25,6 +25,11 @@ public:
 	explicit ShiftCrew(Employee** crewList, int crewAmount);
 
 	/*
+	 * copy the fields to a new addres
+	 */
+	ShiftCrew(const ShiftCrew& other);
+
+	/*
 	 * Release all the allocated memory of the Shift Crew
 	 */
 	~ShiftCrew();

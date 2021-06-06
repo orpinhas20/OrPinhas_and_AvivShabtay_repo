@@ -24,6 +24,11 @@ public:
 		const char* capability);
 
 	/*
+	* copy the fields to a new addres
+	*/
+	EntertainmentEmployee(const EntertainmentEmployee& other);
+
+	/*
 	 * Return the entertainment capability of this employee.
 	 */
 	const char* getCapability() const;

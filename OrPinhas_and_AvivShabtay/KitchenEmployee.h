@@ -25,6 +25,11 @@ public:
 	explicit KitchenEmployee(int age, const char* name, int jobScope, bool isWorkingSaturday, const char* specialty);
 
 	/*
+	 * copy the fields to a new addres
+	 */
+	KitchenEmployee(const KitchenEmployee& other);
+
+	/*
 	 * Return the kitchen specialty of this employee.
 	 */
 	const char* getSpecialty() const;
