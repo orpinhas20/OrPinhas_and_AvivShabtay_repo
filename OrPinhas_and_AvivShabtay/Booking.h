@@ -30,6 +30,11 @@ public:
 	explicit Booking(int orderLength, int roomNumber, Guest** guests, int numberOfGuests);
 
 	/*
+	* copy the fields to a new addres
+	*/
+	Booking(const Booking& other);
+
+	/*
 	 * Release all the allocated memory of the guests
 	 */
 	~Booking();
