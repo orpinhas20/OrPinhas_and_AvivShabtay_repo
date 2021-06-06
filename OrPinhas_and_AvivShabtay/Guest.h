@@ -31,6 +31,11 @@ public:
 	int getRoomNumber() const;
 
 	/*
+	 * Set the room number of this guest.
+	 */
+	void setRoomNumber(int roomNumber);
+
+	/*
 	 * Print the guest details.
 	 */
 	friend ostream& operator<<(ostream& os, const Guest& guest);
