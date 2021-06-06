@@ -26,11 +26,6 @@ public:
 	explicit Employee(int age, const char* name, int jobScope, bool isWorkingSaturday);
 
 	/*
-	 * Not doing anything, just note virtual in case needed to be implemented.
-	 */
-	virtual ~Employee() = default;
-
-	/*
 	 * Return the job scope of this employee.
 	 */
 	int getJobScope() const;
